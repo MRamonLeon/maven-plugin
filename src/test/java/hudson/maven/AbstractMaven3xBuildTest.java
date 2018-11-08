@@ -21,6 +21,7 @@ package hudson.maven;
  */
 
 import hudson.Launcher;
+import hudson.XmlFile;
 import hudson.model.BuildListener;
 import hudson.model.ParametersDefinitionProperty;
 import hudson.model.Result;

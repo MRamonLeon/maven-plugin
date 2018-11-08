@@ -2,6 +2,7 @@ package hudson.maven;
 
 import hudson.Launcher;
 import hudson.model.BuildListener;
+import hudson.model.Job;
 import hudson.model.Result;
 import org.jvnet.hudson.test.Bug;
 import org.jvnet.hudson.test.ExtractResourceSCM;
@@ -22,6 +23,7 @@ public class AbortedMavenBuildTest extends AbstractMavenTestCase {
         project.setScm(new ExtractResourceSCM(getClass().getResource("maven-empty-mod.zip")));
         MavenModuleSetBuild build = project.scheduleBuild2(0).get();
         assertEquals(Result.ABORTED, build.getResult());
+
         assertEquals(Result.ABORTED, wrapper.buildResultInTearDown);
     }
 
